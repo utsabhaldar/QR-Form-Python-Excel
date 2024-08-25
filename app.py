@@ -1,9 +1,11 @@
 from flask import Flask, render_template, request, redirect, send_file, url_for
+from flask_cors import CORS
 from openpyxl import Workbook, load_workbook
 import qrcode
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 # Path to the Excel file
 excel_file = "user_data.xlsx"
